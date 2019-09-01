@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class extends React.Component {
 	constructor(props) {
@@ -32,13 +32,13 @@ export default class extends React.Component {
 				
 				<nav className="nav d-flex justify-content-between">
 					<Link to={'/'}>
-						<a href="javascript:void(0);" className={this.props.selectedMenu == 'home' ? "p-2 text-primary font-weight-bold" : "p-2 text-muted"}>Home</a>
+						<p className={this.props.selectedMenu == 'pokemonlist' ? "p-2 text-primary font-weight-bold" : "p-2 text-muted"}>Home</p>
 					</Link>
 					<Link to={'/pokemon-list'}>
-						<a href="javascript:void(0);" className={this.props.selectedMenu == 'pokemonlist' ? "p-2 text-primary font-weight-bold" : "p-2 text-muted"}>Pokemon List</a>
+						<p className={this.props.selectedMenu == 'pokemonlist' ? "p-2 text-primary font-weight-bold" : "p-2 text-muted"}>Pokemon List</p>
 					</Link>
 					<Link to={'/my-pokemon'}>
-						<a href="javascript:void(0);" className={this.props.selectedMenu == 'mypokemon' ? "p-2 text-primary font-weight-bold" : "p-2 text-muted"}>My Pokemon</a>
+						<p className={this.props.selectedMenu == 'mypokemon' ? "p-2 text-primary font-weight-bold" : "p-2 text-muted"}>My Pokemon</p>
 					</Link>
 				</nav>
 				

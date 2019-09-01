@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 import firebase from '../Firebase'
 
 export default class extends React.Component {
@@ -24,7 +23,7 @@ export default class extends React.Component {
 	    	const { pokemonid, pokemonname, nickname } = doc.data();
 	    	pokemons.push({
 	        	key: doc.id,
-	        	doc, // DocumentSnapshot
+	        	doc,
 	        	pokemonid,
 	        	pokemonname,
 	        	nickname,
@@ -62,7 +61,7 @@ export default class extends React.Component {
 								this.state.pokemons.map((data, i) => {
 									return(
 										<div className="col-md-6" key={i}>
-											<Link href={"/my-pokemon/detail/"+ data.pokemonid +"/"+data.key} as={"/my-pokemon/detail/"+ data.pokemonid +"/"+data.key}>
+											<Link to={"/my-pokemons/detail/"+data.key}>
 												<div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 													<div className="col d-flex flex-column position-static">
 														<div className="p-4 bg-warning">
@@ -83,7 +82,7 @@ export default class extends React.Component {
 						<div className="row mb-2 justify-content-center">
 							<div className="text-center">
 								<p>Have you catch the pokemon ?</p>
-								<Link href={"/pokemon/"} as={"/pokemon/"} >
+								<Link to={"/pokemon-list/"} >
 									<button className="btn btn-primary">Let's Go!</button>
 								</Link>
 							</div>

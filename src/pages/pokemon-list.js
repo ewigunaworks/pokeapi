@@ -119,7 +119,7 @@ export default class extends React.Component {
 										<div className="row">
 											{this.state.pokemons.map((data, i) => {
 												return (<div className="col-md-6" key={i}>
-													<Link href={"/pokemon/detail/"+ this.slicePokemonId(data.url)} as={"/pokemon/detail/"+this.slicePokemonId(data.url)}>
+													<Link to={"/pokemon/detail/"+ this.slicePokemonId(data.url)}>
 														<div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 															<div className="col p-4 d-flex flex-column position-static bg-warning">
 																<h4 className="mb-0 text-white text-capitalize">{ data.name }</h4>
