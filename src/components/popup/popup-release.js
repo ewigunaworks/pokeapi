@@ -17,7 +17,9 @@ export default class PopupRelease extends React.Component {
 	}
 
 	handleSubmit() {
+		$('.popup-bottom-loader').removeClass('closed')
 		firebase.firestore().collection('mypokemon').doc(this.state.firebasekey).delete().then(() => {
+			$('.popup-bottom-loader').addClass('closed')
 			this.handleChange(true, false, false, 'Release The Pokemon')
 		}).catch((error) => {
 			this.handleChange(true, true, false, 'Failed Release The Pokemon')

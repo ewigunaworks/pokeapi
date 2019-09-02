@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import PopupCatch from '../components/popup/popup-catch'
 import PopupNotification from '../components/popup/popup-notification'
+import Loader from '../components/loader'
 import Collapse, { Panel } from 'rc-collapse'
 
 const Config = require('../config')
@@ -150,6 +151,7 @@ export default class extends React.Component {
 					this.state.isNotif &&
 					<PopupNotification isError={this.state.isError} message={this.state.message} urlredir={window.location.pathname} handleRedirect={this.handleRedirect} />
 				}
+				<Loader />
 			</React.Fragment>
 		)
 	}

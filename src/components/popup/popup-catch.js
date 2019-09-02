@@ -29,7 +29,7 @@ export default class PopupCatch extends React.Component {
 
 	handleSubmit() {
 		const { nickname, pokemonid, pokemonname, pokemonsprites, pokemontypes, pokemonmoves, weight, height } = this.state;
-		
+		$('.popup-bottom-loader').removeClass('closed')
 		this.ref.add({
 			nickname,
 			pokemonid,
@@ -41,6 +41,7 @@ export default class PopupCatch extends React.Component {
 			height,
 		}).then((docRef) => {
         	if(this.props.handleRedirect) {
+        		$('.popup-bottom-loader').addClass('closed')
 				this.props.handleRedirect(false, '/my-pokemon/')
 			}
 		})

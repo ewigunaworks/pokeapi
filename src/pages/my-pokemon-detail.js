@@ -1,8 +1,10 @@
 import React from 'react'
+import $ from 'jquery'
 import firebase from '../Firebase'
 import Collapse, { Panel } from 'rc-collapse'
 import PopupRelease from '../components/popup/popup-release'
 import PopupNotification from '../components/popup/popup-notification'
+import Loader from '../components/loader'
 
 import 'rc-collapse/assets/index.css';
 
@@ -67,6 +69,7 @@ export default class extends React.Component {
 		if(isError) {
 			window.location.reload();
 		} else {
+			$('.popup-bottom-loader').addClass('closed')
 			this.props.history.push(urlredir)
 		}
 	}
@@ -145,6 +148,7 @@ export default class extends React.Component {
 					this.state.isNotif &&
 					<PopupNotification isError={this.state.isError} message={this.state.message} is404={this.state.is404} isMyPokemon={true} handleRedirect={this.handleRedirect} />
 				}
+				<Loader />
 			</React.Fragment>
 		)
 	}
